@@ -16,19 +16,64 @@
 
 # VORTEX
 
-**An [Arcade Phantasm](https://arcade-phantasm.netlify.app/) game** · The browser version: play it on its page once it's built. The Windows exe is [Vortex-Exe](https://github.com/CursedPrograms/Vortex-Exe).
+**An [Arcade Phantasm](https://arcade-phantasm.netlify.app/) game** · **[Play it](https://cursedprograms.github.io/Vortex/)**
 
 You're falling through a collapsing dimension. Run along the inside of a rotating tunnel, dodge obstacles and collect energy fragments while the tunnel twists, turns and finally breaks apart. Faster every level.
 
-**The twist:** Some obstacles reverse your controls for a while.
+**The twist:** the glitchy, flickering blocks reverse your left and right for a few seconds. The screen turns green and tears while they're reversed.
 
-## Status
+<div align="center">
+  <img src="images/screenshot-splash.png" alt="VORTEX splash" width="49%"/>
+  <img src="images/screenshot-play.png" alt="VORTEX: running the tunnel at level 3" width="49%"/>
+  <img src="images/screenshot-broken.png" alt="VORTEX: the tunnel breaking apart at level 5" width="49%"/>
+  <img src="images/screenshot-reversed.png" alt="VORTEX: controls reversed" width="49%"/>
+</div>
 
-In development. Plain HTML, CSS and JavaScript on a canvas: `index.html`, `site/style.css`, `site/game.js`, sound made with Web Audio.
+## Versions
+
+| Version | Where | Status |
+|---|---|---|
+| Browser | this folder, the repo root · **[Play it](https://cursedprograms.github.io/Vortex/)** | Playable |
+| Windows exe | `cpp/` | Coming |
+| Android | `android/` | Coming |
+
+## How to play
+
+You run on the inside wall of the tunnel, seen from behind. Steering runs you round the wall, so "down" keeps changing, and the tunnel turns by itself too, sliding the panels under your feet.
+
+- **Blocks**: run round them; they're too tall to jump.
+- **Gaps**: jump them. A missing panel drops you into the void.
+- **Spinning bars**: time your run past them.
+- **Glitch blocks** (flickering green and pink): touch one and your left and right swap for a few seconds.
+- **Energy fragments** (green diamonds): grab them for points; a run of them scores more.
+
+Every level is faster. Level 2 brings glitches and spinning bars, level 3 corkscrews, level 4 panels that crumble away as you reach them, and from level 5 the tunnel has broken into floating pieces you jump between. You have three lives, and an extra one every third level. Your best score is kept in the browser.
+
+## Controls
+
+| Key | Action |
+|---|---|
+| ← → or A D | Run round the tunnel |
+| Space, ↑ or W | Jump |
+| P or Esc | Pause |
+| M | Mute |
+| Space or Enter | Run again after game over |
+
+On a phone: the ◀ ▶ buttons run round, JUMP jumps, II pauses.
+
+## Files
+
+- `index.html`: the page
+- `site/style.css`: the page's look
+- `site/game.js`: the game: the tunnel, the track, the runner, the drawing
+- `site/sfx.js`: the sound, made with Web Audio (no audio files)
+- `images/`: the Cursed logo and the screenshots
+
+Open `index.html#shot` for a mid-game screenshot (`#shot-broken` and `#shot-reversed` for the others).
 
 ## Also in the arcade
 
-[Killer Stardust](https://github.com/CursedPrograms/killer-stardust) · PROTOCOL.hex · SÉANCE · RICOCHET REAPER · GRAVE DANGER · VORTEX · ORBIT · ROCKS OF RUIN · DEVOURER
+[KillerStardust](https://github.com/CursedPrograms/KillerStardust) · ProtocolHex · Seance · RicochetReaper · GraveDanger · **Vortex** · [Orbit](https://github.com/CursedPrograms/Orbit) · RocksOfRuin · Devourer
 
 <br>
 <div align="center">

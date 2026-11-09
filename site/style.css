@@ -1,0 +1,176 @@
+/* VORTEX: the game fills the window; the HUD sits over it in the Cursed pink. Solid colours only. */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #020611;
+    font-family: Arial, Helvetica, sans-serif;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#game {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    display: flex;
+    gap: 22px;
+    color: #f088e9;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+}
+
+#hud #hud-best {
+    color: #34a9e3;
+}
+
+#help {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    color: #c2c2c2;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+#hud,
+#help,
+#touch {
+    visibility: hidden;
+}
+
+body.playing #hud,
+body.playing #help {
+    visibility: visible;
+}
+
+/* the splash, before the game starts */
+#splash {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background-color: rgba(2, 6, 17, 0.62);
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+
+#splash.gone {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#splash .title {
+    margin: 0;
+    color: #f088e9;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: min(150px, 22vw);
+    letter-spacing: 0.12em;
+    line-height: 1;
+}
+
+#splash .tagline {
+    margin: 0 0 10px;
+    color: #34a9e3;
+    font-size: min(24px, 5vw);
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+#splash .cursed-logo {
+    width: min(260px, 50vw);
+}
+
+#splash .copyright {
+    margin: 0;
+    color: #c2c2c2;
+    font-size: 15px;
+}
+
+#splash .how {
+    margin: 10px 0 0;
+    color: #c2c2c2;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#splash .press {
+    margin: 14px 0 0;
+    color: #39ff6a;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    animation: blink 1.2s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* touch buttons, only on phones and tablets */
+#touch button {
+    position: absolute;
+    bottom: 18px;
+    width: 92px;
+    height: 92px;
+    border: 2px solid #34a9e3;
+    border-radius: 50%;
+    background-color: rgba(0, 23, 37, 0.55);
+    color: #34a9e3;
+    font-size: 30px;
+    font-weight: bold;
+    touch-action: none;
+}
+
+#touch button.down {
+    background-color: #007ab7;
+    color: #ffffff;
+}
+
+#touch #t-left { left: 18px; }
+#touch #t-right { left: 126px; }
+
+#touch #t-jump {
+    right: 18px;
+    width: 110px;
+    height: 110px;
+    border-color: #f088e9;
+    color: #f088e9;
+    font-size: 20px;
+}
+
+#touch #t-pause {
+    top: 50px;
+    right: 14px;
+    bottom: auto;
+    width: 46px;
+    height: 46px;
+    font-size: 16px;
+}
+
+@media (pointer: coarse) {
+    body.playing #touch { visibility: visible; }
+    #help { display: none; }
+}
+
+@media (max-width: 640px) {
+    #hud { font-size: 14px; gap: 12px; flex-wrap: wrap; }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VORTEX - Arcade Phantasm</title>
+    <meta name="description" content="VORTEX: run the inside of a collapsing tunnel. An Arcade Phantasm game by Cursed Entertainment.">
+    <link rel="icon" href="images/cursed-logo.png">
+    <link rel="stylesheet" href="site/style.css">
+</head>
+
+<body>
+    <canvas id="game"></canvas>
+    <div id="hud">
+        <span id="hud-score">Score 0</span>
+        <span id="hud-level">Level 1</span>
+        <span id="hud-lives">Lives 3</span>
+        <span id="hud-best">Best 0</span>
+    </div>
+    <div id="help">&larr; &rarr; / A D run round · Space / &uarr; jump · P pause · M mute</div>
+    <div id="splash">
+        <h1 class="title">VORTEX</h1>
+        <p class="tagline">An Arcade Phantasm game</p>
+        <img class="cursed-logo" src="images/cursed-logo.png" alt="Cursed Entertainment">
+        <p class="copyright">&copy; Cursed Entertainment 2026</p>
+        <p class="how">Run round the tunnel, jump the gaps, grab the fragments.<br>Glitches flip your left and right.</p>
+        <p class="press">Press any key or tap to start</p>
+    </div>
+    <div id="touch">
+        <button id="t-left" aria-label="Left">&#9664;</button>
+        <button id="t-jump" aria-label="Jump">JUMP</button>
+        <button id="t-right" aria-label="Right">&#9654;</button>
+        <button id="t-pause" aria-label="Pause">II</button>
+    </div>
+    <script src="site/sfx.js"></script>
+    <script src="site/game.js"></script>
+</body>
+
+</html>
