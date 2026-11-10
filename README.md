@@ -35,7 +35,7 @@ You're falling through a collapsing dimension. Run along the inside of a rotatin
 |---|---|---|
 | Browser | this folder, the repo root · **[Play it](https://cursedprograms.github.io/Vortex/)** | Playable |
 | Windows exe | `cpp/` | Coming |
-| Android | `android/` | Coming |
+| Android | `android/` · [APK](android/apk/) | Playable |
 
 ## How to play
 
@@ -60,6 +60,19 @@ Every level is faster. Level 2 brings glitches and spinning bars, level 3 corksc
 | Space or Enter | Run again after game over |
 
 On a phone: the ◀ ▶ buttons run round, JUMP jumps, II pauses.
+
+## Android
+
+The browser game in an Android app: it plays offline, full screen in landscape, with the sound on from the start
+(Android 7.0 or newer).
+
+- **Download**: the APK in [`android/apk/`](android/apk/). Copy it to the phone and open it (allow installs from
+  unknown sources when asked).
+- **Build it**: the Android SDK and JDK 17, then `android/build.bat` (or `build.ps1`, `build.sh`). It runs
+  `gradlew assembleDebug` and leaves the APK in `android/apk/`. The game's web files are copied into the app at build
+  time, so the browser game at the repo root stays the only copy.
+- **The code**: `android/app/src/main/java/com/synthwomb/vortex/MainActivity.kt`, a full-screen WebView that serves the
+  game from the app's assets. Press Back twice to leave.
 
 ## Files
 
